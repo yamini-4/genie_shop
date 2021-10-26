@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:genie/constants/constants.dart';
+import 'package:genie/view/home/body.dart';
 
 import 'drawer.dart';
 
@@ -12,16 +13,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   final String? displayName = FirebaseAuth.instance.currentUser!.displayName;
-  late TabController _tabController;
 
-  void initState() {
-    super.initState();
-    _tabController = new TabController(
-      length: 2,
-      vsync: this,
-      initialIndex: 0,
-    );
-  }
+  // late TabController _tabController;
+  //
+  // void initState() {
+  //   super.initState();
+  //   _tabController = new TabController(
+  //     length: 2,
+  //     vsync: this,
+  //     initialIndex: 0,
+  //   );
+  // }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,24 +50,49 @@ class _HomePageState extends State<HomePage>
             icon: Icon(Icons.shopping_bag_outlined),
           ),
         ],
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: [
-            Tab(
-              icon: Icon(Icons.add),
-            ),
-            Tab(
-              icon: Icon(Icons.add),
-            ),
-          ],
-        ),
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          Text("bnbns"),
-          Text("sjhdsjhd"),
-        ],
+      body: Body(),
+      bottomNavigationBar: BottomAppBar(
+        child: SizedBox(
+          height: 44,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () {},
+                  child: SizedBox(
+                    height: kToolbarHeight,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [Icon(Icons.sort), Text("Sort")],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: kToolbarHeight,
+                width: 1,
+                color: Colors.black12,
+              ),
+              Expanded(
+                child: InkWell(
+                  onTap: () {},
+                  child: SizedBox(
+                    height: kToolbarHeight,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.filter_alt_outlined),
+                        Text("Filter")
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

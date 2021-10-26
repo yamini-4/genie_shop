@@ -28,7 +28,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 children: [
                   Text(
                     displayName!,
-                    style: TextStyle(fontSize: 18),
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                        fontFamily: "Comfortaa",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -40,7 +43,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 ],
               ),
               currentAccountPicture: CircleAvatar(
-                child: Text("LeYo"),
+                child: Text("YAMI"),
               ),
             ),
           ),
