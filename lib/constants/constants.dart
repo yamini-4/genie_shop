@@ -1,7 +1,7 @@
 import 'dart:core';
 
 const String appName = "SHOP ";
-const String appTitle = "SheShop";
+const String appTitle = "Shop";
 const String slogan = "For Women";
 const String image = "assets/pink-clothing.jpeg";
 const String login = "Login";

@@ -197,13 +197,13 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
         price: 2100,
         category: "Bags"),
     Product(
-        name: "Mango",
+        name: "Mangooooooooooooo",
         previewImg:
             "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/15102936/2021/9/10/6f0ced32-82bd-41c7-a4f0-198502b53f061631269359946FlatsMANGOWomenHeelsMANGOWomenHeelsMANGOWomenHeelsMANGOWomen1.jpg",
         price: 1320,
         category: "Bags"),
     Product(
-        name: "Mast&Harbor",
+        name: "Mast & Harbour",
         previewImg:
             "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12898258/2021/7/20/a44caa6d-f000-40d8-82dd-3ce2bfa1a8fa1626780402598-Mast--Harbour-Women-Backpacks-4591626780401869-1.jpg",
         price: 750,
@@ -263,7 +263,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                         : 2,
                 crossAxisSpacing: 4,
                 mainAxisSpacing: 4,
-                childAspectRatio: 0.90,
+                childAspectRatio: .65,
               ),
               itemCount: temp.length,
               itemBuilder: (context, index) {
@@ -276,7 +276,6 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(14),
                         child: Container(
-                          height: 165,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: Colors.pink,
@@ -290,24 +289,34 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                       ),
                       Row(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Text(product.name,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyText1!
-                                    .copyWith(
-                                        fontSize: 12, color: Colors.black45)),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: Text(product.name,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText1!
+                                          .copyWith(
+                                              fontSize: 12,
+                                              color: Colors.black45)),
+                                ),
+                                Text(
+                                  "\₹ ${product.price.toStringAsFixed(0)}",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText1!
+                                      .copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 13),
+                                ),
+                              ],
+                            ),
                           ),
-                          Text(
-                            "\₹ ${product.price.toStringAsFixed(0)}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText1!
-                                .copyWith(
-                                    fontWeight: FontWeight.bold, fontSize: 13),
-                          ),
-                          Spacer(),
                           IconButton(
                             onPressed: () {},
                             icon: Icon(Icons.favorite_outline_sharp),

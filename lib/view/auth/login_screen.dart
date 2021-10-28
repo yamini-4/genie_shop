@@ -93,6 +93,8 @@ class LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height; //gets the hyt of device
     double width = MediaQuery.of(context).size.width;
+
+    var theme = Theme.of(context).textTheme.bodyText1;
     // print(height);
     // print(width);
     return Scaffold(
@@ -123,15 +125,15 @@ class LoginScreenState extends State<LoginScreen> {
                       text: TextSpan(children: [
                         TextSpan(
                           text: "$appName\n",
-                          style: TextStyle(
+                          style: theme!.copyWith(
                             color: Colors.black,
                             fontSize: 28.sp,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         TextSpan(
                           text: slogan,
-                          style: TextStyle(
+                          style: theme.copyWith(
                             color: Colors.black,
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w300,
@@ -258,10 +260,10 @@ class LoginScreenState extends State<LoginScreen> {
                         style: TextButton.styleFrom(primary: Colors.black),
                         child: Text(
                           forgotText,
-                          style: TextStyle(
-                            fontSize: 15.sp,
-                            //color: Colors.black,
-                          ),
+                          style: theme.copyWith(
+                              fontSize: 15.sp, fontWeight: FontWeight.bold
+                              //color: Colors.black,
+                              ),
                         ),
                       ),
                     ),
@@ -290,9 +292,10 @@ class LoginScreenState extends State<LoginScreen> {
                           ), //foreground(text in button)
                           child: Text(
                             loginButton,
-                            style: TextStyle(
+                            style: theme.copyWith(
+                              color: Colors.white,
                               fontSize: 20.sp,
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
@@ -305,7 +308,7 @@ class LoginScreenState extends State<LoginScreen> {
                         children: [
                           Text(
                             "New User?",
-                            style: TextStyle(
+                            style: theme.copyWith(
                               fontSize: 18.sp,
                             ),
                           ),
@@ -322,8 +325,10 @@ class LoginScreenState extends State<LoginScreen> {
                             },
                             child: Text(
                               "Create Account",
-                              style: TextStyle(
-                                fontSize: 20.sp,
+                              style: theme.copyWith(
+                                color: primaryColor,
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),

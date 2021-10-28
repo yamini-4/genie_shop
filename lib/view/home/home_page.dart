@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:genie/constants/constants.dart';
 import 'package:genie/view/home/body.dart';
+import 'package:genie/view/search/search_page.dart';
+import 'package:genie/view/wishlist/wishlist_page.dart';
 
 import 'drawer.dart';
 
@@ -38,11 +40,17 @@ class _HomePageState extends State<HomePage>
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SearchPage()));
+            },
             icon: Icon(Icons.search_rounded),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => WishlistPage()));
+            },
             icon: Icon(Icons.favorite_border_rounded),
           ),
           IconButton(

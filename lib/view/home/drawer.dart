@@ -29,9 +29,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   Text(
                     displayName!,
                     style: Theme.of(context).textTheme.headline6!.copyWith(
-                        fontFamily: "Comfortaa",
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "334017324408",
+    "project_id": "genie-ad5de",
+    "storage_bucket": "genie-ad5de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334017324408:android:0149c14144fd24ed85d48d",
+        "android_client_info": {
+          "package_name": "com.genie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334017324408-a271fprii6fp6rhljvgs8t6porb4bh0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvH8EWCNTLoTxI9f20LNN8Uv-HqYVXmwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334017324408-a271fprii6fp6rhljvgs8t6porb4bh0g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "334017324408-1hrnpgb029300n37d9nu31a71j17pa59.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.genie"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

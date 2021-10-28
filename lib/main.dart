@@ -1,9 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:genie/view/auth/login_screen.dart';
-import 'package:genie/view/home/home_page.dart';
 
 import 'constants/colors.dart';
 import 'constants/constants.dart';
@@ -21,10 +19,10 @@ class MyApp extends StatelessWidget {
       builder: () {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          // home: LoginScreen(),
-          home: FirebaseAuth.instance.currentUser == null
-              ? LoginScreen()
-              : HomePage(),
+          home: LoginScreen(),
+          // home: FirebaseAuth.instance.currentUser == null
+          //     ? LoginScreen()
+          //     : HomePage(),
           title: appName,
           theme: ThemeData(
             primarySwatch: Colors.pink,
@@ -38,16 +36,20 @@ class MyApp extends StatelessWidget {
               headline5: TextStyle(
                 fontFamily: "Comfortaa",
               ),
+              headline6: TextStyle(
+                fontFamily: "Comfortaa",
+              ),
             ),
             tabBarTheme: TabBarTheme(
-              labelStyle: TextStyle(fontFamily: "Comfortaa"),
+              labelStyle: TextStyle(
+                  fontFamily: "Comfortaa", fontWeight: FontWeight.bold),
               unselectedLabelStyle: TextStyle(fontFamily: "Comfortaa"),
             ),
             appBarTheme: AppBarTheme(
               titleTextStyle: TextStyle(
-                fontFamily: "Comfortaa",
-                fontWeight: FontWeight.bold,
-              ),
+                  fontFamily: "Comfortaa",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.sp),
             ),
             inputDecorationTheme: InputDecorationTheme(
               labelStyle: TextStyle(
